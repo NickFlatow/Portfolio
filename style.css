@@ -1,0 +1,155 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+    --black: #151F30;
+    --dkblue: #103778;
+    --plum: #4b0d49;
+    /* hotmag */
+    --orange: #FF7A48;
+    /* magenta */
+    --red: #E3371E;
+    --aqua: #0593A2;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+
+
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    padding: 0;
+    margin: 0;
+    
+    background-color: var(--black);
+    
+    /* font */
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: var(--font-size);
+}
+h1,h2,h3 {
+    margin:0;
+}
+a {
+    color: var(--red);
+}
+a:hover {
+    color: var(--orange);
+    text-decoration: none;
+}
+
+
+/* intro styles */
+#intro {
+    /* em relative to the root font-size */
+    padding-bottom: 10rem;
+}
+#intro p {
+    /* slightly smaller than the root  */
+    font-size: 1rem;
+    /* line height should not have unit of measure 1.5 * font-size */
+    /* adding a unit will cause space between text scale with scroll along with font size */
+    /* not adding unit will just cause font to grow/shrink */
+    line-height: 1.5;
+}
+#intro .name {
+    font-family: var(--mono);
+}
+.name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: var(--aqua);
+    /* span by default is inline  */
+    /* add block to place on a new line */
+    display: block;
+}
+#intro h2 {
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+
+/* contact section */
+#contact {
+    /* width: 400px; */
+    /* no margin on top or buttom  */
+    /* auto take care of evenly dividing the remainder of px after 400 width evenly on both sides */
+    margin: 0 auto; 
+    /* top and bottom breathing room as we stack elements */
+    padding: 3rem 0;
+
+
+    text-align: center;
+    background-color: var(--red);
+}
+#contact a {
+    color: var(--white);
+}
+#contact a:hover {
+    color: var(--orange);
+}
+#contact button {
+    /* background-color: var(--orange); */
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-family: var(--mono);
+    cursor: pointer;
+}
+#contact p:last-child {
+    margin-top: 3rem;
+}
+
+
+
+/* navbar */
+nav {
+    font-family: var(--mono);
+    /* base font size reduce by 80% */
+    font-size: 80%;
+    padding: 1rem;
+}
+nav h1 a {
+    font-family: var(--sans);
+}
+nav ul {
+    /* remove bullet points */
+    list-style: none;
+    /* ul and ol has defulat margin or padding depends on which broswer  */
+    /* pulls everything to the left side */
+    padding: 0;
+    margin: 0;
+    /* flexbox */
+    display: flex;
+    flex-flow: row wrap;
+    /* horizontal access */
+    justify-content: center;
+    /* vertical access */
+    align-items: center;
+    /* space between elements */
+    gap: 2rem;
+}
+nav li:first-child {
+    /* expand to the whole space */
+    flex-basis: 100%;
+    text-align: center;
+    
+    /* debug */
+    /* border: 1px solid red; */
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    /* a by default is an inline element */
+    /* fill the full clickable element */
+    display: block;
+}
